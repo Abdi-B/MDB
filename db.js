@@ -4,12 +4,12 @@ require('dotenv').config()
 
 
 let dbConnection 
-let Matlas = process.env.MONGO_URI
+let uri = process.env.MONGO_URI
 
 module.exports = {
     connectToDb: (cb) => {
       // MongoClient.connect("mongodb://localhost:27017/AB")
-      MongoClient.connect(Matlas)
+      MongoClient.connect(uri)
       .then((client) => {
         dbConnection = client.db()
         
